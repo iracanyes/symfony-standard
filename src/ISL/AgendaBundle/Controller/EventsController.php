@@ -127,7 +127,7 @@ class EventsController extends Controller
         }
         return $this->render(
                 'ISL/AgendaBundle/Events/view.html.twig',
-                array('events'=>$events)
+                array('event'=>$events)
                 );
     }
     

@@ -6,33 +6,31 @@
 {% block body %}
     <main>
         <h1>Nos événements </h1>
-        {% if events|length>=1 %}
-            {% for events in listEvents %}
-                <div id="event_{{loop.index}}">
-                    <h3>{{events.nom}}</h3>
+        
+                <div id="event">
+                    <h3>{{event.nom}}</h3>
                     <p>
-                       Du  {{events.debut|date('d/m/Y')}} <br />
-                       Au   {{events.fin|date('d/m/Y')}}
+                       Du  {{event.debut|date('d/m/Y')}} <br />
+                       Au   {{event.fin|date('d/m/Y')}}
                     </p>
                     <div>
-                        <h5>Catégorie: {{events.categories.nom}} </h5>
+                        <h5>Catégorie: {{event.categories.nom}} </h5>
                         <p>
-                        Description: {{events.categories.description}}
+                        Description: {{event.categories.description}}
                         </p>
                     </div>
                     
                     <div>
-                        <img src="{{events.image.url}}" alt="{{events.image.alt}}" title="{{events.image.title}}" />
+                        <img src="{{event.image.url}}" alt="{{event.image.alt}}" title="{{event.image.title}}" />
                         <p>
-                            {{events.description}}
+                            {{event.description}}
                         </p>
                     </div>
                         <div>
-                            <h6>Auteur : {{events.user.username}}</h6>
-                            <img src="{{events.user.profile_picture}}" alt="" />
+                            <h6>Auteur : {{event.user.username}}</h6>
+                            <img src="{{event.user.profile_picture}}" alt="" />
                         </div>
                 </div>
-            {% endfor %} 
-        {% endif %}    
+               
     </main>
 {% endblock %}
