@@ -1,0 +1,5 @@
+## YAML Template.
+ISL\AgendaBundle\Entity\Categories:
+    category_{1..3}:
+        nom: '<name()>'
+        description: '<text(200)>'

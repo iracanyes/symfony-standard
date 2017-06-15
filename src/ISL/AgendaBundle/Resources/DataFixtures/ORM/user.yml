@@ -1,0 +1,5 @@
+## YAML Template.
+ISL\AgendaBundle\Entity\User:
+    user_{1..3}:
+        username: '<name()>'
+        profile_picture: '<text(40)>'

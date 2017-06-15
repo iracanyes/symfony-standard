@@ -1,0 +1,10 @@
+## Events Fixtures       
+ISL\AgendaBundle\Entity\Events:
+    events_{1..3}:
+        nom: '<firstname()> <lastname()>'
+        description: '<text(200)>'
+        debut: '<dateTimeBetween("-350 days", "-20 days")>'
+        fin: '<dateTimeBetween("-200 days", "now")>'
+        image: '@image_<current()>'
+        categories: '@category_<current()>'
+        

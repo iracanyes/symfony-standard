@@ -1,0 +1,34 @@
+# Accueil
+isl_agenda_home:
+    path:     /
+    defaults: { _controller: ISLAgendaBundle:Events:index }
+    
+# Ajouter la relation ManyToMany
+isl_agenda_addRelation:
+    path:    /addRelation/{first}
+    defaults: { _controller: ISLAgendaBundle:Events:addRelation }
+    requirements: 
+        first: true|false
+# read    
+isl_agenda_view:
+    path:    /view/{id}
+    defaults: { _controller: ISLAgendaBundle:Events:eventsDetail}
+    requirements:
+        id: \d+
+        
+# create
+isl_agenda_add:
+    path:    /add
+    defaults: { _controller: ISLAgendaBundle:Events:addEvents}
+    
+# update
+isl_agenda_update:
+    path:    /update/{id}
+    defaults: { _controller: ISLAgendaBundle:Events:updateEvents}
+    
+# update
+isl_agenda_update:
+    path:    /delete/{id}
+    defaults: { _controller: ISLAgendaBundle:Events:deleteEvents}
+    
+    

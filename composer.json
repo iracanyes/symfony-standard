@@ -33,7 +33,7 @@
         "symfony/symfony": "~3.0",
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.1",
-        "theofidry/alice-data-fixtures": "dev-master"
+        "theofidry/alice-data-fixtures": "^1.0-beta4    "
     },
     "scripts": {
         "symfony-scripts": [

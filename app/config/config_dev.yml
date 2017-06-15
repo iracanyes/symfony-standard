@@ -39,3 +39,11 @@ monolog:
 
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
+
+#Activer la configuration de Hautelook\alice après installations des dépendances
+# composer install + composer update
+# Définit le chemin dans le répertoire "app/" vers les fixtures
+# Organiser en bundle si ISLExe alors app/Resources/DataFixtures/ORM/ISL/Exe/mes_fixtures.yml
+
+hautelook_alice:
+   fixtures_path: 'Resources/DataFixtures/ORM'
