@@ -18,9 +18,9 @@ class EventsController extends Controller
         //Création de la relation ManyToMany
         $em = $this->getDoctrine()->getManager();
         
-        $listEvents = $this->getRepository('ISLAgendaBundle:Events')->findAll();
+        $listEvents = $em->getRepository('ISLAgendaBundle:Events')->findAll();
         
-        $listUser = $this->getRepository('ISLAgendaBundle:User')->findAll();
+        $listUser = $em->getRepository('ISLAgendaBundle:User')->findAll();
         
         foreach($listEvents as $event){
             foreach($listUser as $user){
@@ -125,10 +125,15 @@ class EventsController extends Controller
         if(!$events){
             throw new NotFoundHttpException('Aucune événement enregister à cette id '.$id.' en Db!!');
         }
+        
+        //return new Response(dump($events));
+        
         return $this->render(
                 'ISL/AgendaBundle/Events/view.html.twig',
                 array('event'=>$events)
                 );
+          
+         
     }
     
            

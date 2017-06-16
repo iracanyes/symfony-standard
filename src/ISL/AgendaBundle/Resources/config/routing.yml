@@ -26,8 +26,8 @@ isl_agenda_update:
     path:    /update/{id}
     defaults: { _controller: ISLAgendaBundle:Events:updateEvents}
     
-# update
-isl_agenda_update:
+# delete
+isl_agenda_delete:
     path:    /delete/{id}
     defaults: { _controller: ISLAgendaBundle:Events:deleteEvents}
     
