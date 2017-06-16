@@ -1,0 +1,22 @@
+{#Twig template : Exe2Bundle:home #}
+
+{% extends "default/base.html.twig"%}
+
+{% block title %}Symfony: Évaluation : Service d'agenda{% endblock %}
+{% block body %}
+    <main>
+        <h1>Nos Catégories </h1>
+        {% if listCategories|length>=1 %}
+            <div>
+            {% for categories in listCategories %}
+                <div id="categories_{{loop.index}}">
+                    <h3>{{categories.nom}}</h3>
+                    <p>
+                        {{categories.description}}
+                    </p>
+                </div>
+            {% endfor %} 
+            </div>
+        {% endif %}    
+    </main>
+{% endblock %}

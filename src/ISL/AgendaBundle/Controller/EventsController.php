@@ -59,9 +59,9 @@ class EventsController extends Controller
     
     public function updateEventsAction($id, Request $request)
     {
-        $event = $this-> getDoctrine()
-                ->getManager()
-                ->getRepository('ISLAgendaBundle:Events')
+        $em = $this-> getDoctrine()
+                ->getManager();
+        $event = $em->getRepository('ISLAgendaBundle:Events')
                 ->find($id);
         //News
         $event->setNom($request->request->get('events_nom'));
@@ -118,19 +118,33 @@ class EventsController extends Controller
     }  
     
     public function eventsDetailAction($id) {
+        
         $em = $this->getDoctrine()->getManager();
         
         $events=$em->getRepository('ISLAgendaBundle:Events')->find($id);
         
+        
+        
         if(!$events){
             throw new NotFoundHttpException('Aucune événement enregister à cette id '.$id.' en Db!!');
         }
+        /*
+        $listUser = $em->getRepository('ISLAgendaBundle:News')
+                ->findBy(array('events'=>$events));
         
+        if(!$user){
+            throw new NotFoundHttpException('Cette événement n\'est associé aucun utilisateur en Db!!');
+        }
+         * 
+         */
         //return new Response(dump($events));
         
         return $this->render(
                 'ISL/AgendaBundle/Events/view.html.twig',
-                array('event'=>$events)
+                array(
+                    'event'=>$events//,
+                    //'user' =>$user
+                    )
                 );
           
          

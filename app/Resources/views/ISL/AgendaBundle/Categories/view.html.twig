@@ -1,0 +1,47 @@
+{#Twig template : Exe2Bundle:home #}
+
+{% extends "default/base.html.twig"%}
+
+{% block title %}Symfony: Évaluation : Service d'agenda{% endblock %}
+{% block body %}
+    <main>
+        <h1>Nos événements par catégories </h1>
+        <div>
+            <h2>{{categories.nom}}</h2>
+            <p>
+                {{categories.description}}
+            </p>
+            <div>
+                {% if listEvents>=1 %}
+                {% for events in listEvents %}
+                    <div>
+                        
+                        <h3>{{events.nom}}</h3>
+                        <p>
+                           Du  {{events.debut|date('d/m/Y')}} <br />
+                           Au   {{events.fin|date('d/m/Y')}}
+                        </p>
+                        <div>
+                            <h5>Catégorie: {{events.categories.nom}} </h5>
+                            <p>
+                            Description: {{events.categories.description}}
+                            </p>
+                        </div>
+
+                        <div>
+                            <img src="{{events.image.url}}" alt="{{events.image.alt}}" title="{{events.image.title}}" />
+                            <p>
+                                {{events.description}}
+                            </p>
+                        </div>
+                
+                    </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        
+                
+               
+    </main>
+{% endblock %}

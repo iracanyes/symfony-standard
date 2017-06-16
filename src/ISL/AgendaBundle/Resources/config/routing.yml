@@ -9,26 +9,37 @@ isl_agenda_addRelation:
     defaults: { _controller: ISLAgendaBundle:Events:addRelation }
     requirements: 
         first: true|false
-# read    
-isl_agenda_view:
+# events_read    
+isl_agenda_events_view:
     path:    /view/{id}
     defaults: { _controller: ISLAgendaBundle:Events:eventsDetail}
     requirements:
         id: \d+
         
-# create
+# events create
 isl_agenda_add:
     path:    /add
     defaults: { _controller: ISLAgendaBundle:Events:addEvents}
     
-# update
+# events update
 isl_agenda_update:
     path:    /update/{id}
     defaults: { _controller: ISLAgendaBundle:Events:updateEvents}
     
-# delete
+# events delete
 isl_agenda_delete:
     path:    /delete/{id}
     defaults: { _controller: ISLAgendaBundle:Events:deleteEvents}
     
+# categories home    
+isl_agenda_categories_home:
+    path:    /categories
+    defaults: { _controller: ISLAgendaBundle:Categories:index}
+    
+# categories view :
+isl_agenda_categories_view:
+    path:    /categories/{id}
+    defaults: { _controller: ISLAgendaBundle:Categories:categoriesDetail}
+    requirements: 
+        id: \d+
     

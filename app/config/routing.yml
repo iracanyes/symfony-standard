@@ -1,7 +1,9 @@
+# fichier de routage "routing.yml" dans le répertoire "Resources/config" d'un bundle spécifique 
 isl_agenda:
     resource: "@ISLAgendaBundle/Resources/config/routing.yml"
     prefix:   /
 
+# Annotation de routage dans le controller par défaut 
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
